@@ -24,7 +24,7 @@ public class SpringBootMybatisPlusApplicationTests {
     public void contextLoads() {
         sysUserService.save(SysUser.builder().age(1).password("123456").username("Hairo").userId(1).importTime(LocalDateTime.now().withNano(0)).build());
         List<SysUser> list = sysUserService.lambdaQuery().list();
-        list.forEach(o -> log.debug(o.toString()));
+        list.forEach(o -> log.debug(o.getUsername()));
     }
 
 }
